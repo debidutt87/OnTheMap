@@ -101,13 +101,11 @@
 		E5C420492388B0AE0017A102 /* OnTheMap */ = {
 			isa = PBXGroup;
 			children = (
+				E5C4207E2388C4120017A102 /* Model */,
+				E5C4207D2388C3EC0017A102 /* Controller */,
+				E5C4207C2388C3D00017A102 /* View */,
 				E5C4204A2388B0AE0017A102 /* AppDelegate.swift */,
 				E5C4204C2388B0AE0017A102 /* SceneDelegate.swift */,
-				E5C4204E2388B0AE0017A102 /* FirstViewController.swift */,
-				E5C420502388B0AE0017A102 /* SecondViewController.swift */,
-				E5C420522388B0AE0017A102 /* Main.storyboard */,
-				E5C420552388B0AF0017A102 /* Assets.xcassets */,
-				E5C420572388B0AF0017A102 /* LaunchScreen.storyboard */,
 				E5C4205A2388B0AF0017A102 /* Info.plist */,
 			);
 			path = OnTheMap;
@@ -129,6 +127,32 @@
 				E5C420702388B0AF0017A102 /* Info.plist */,
 			);
 			path = OnTheMapUITests;
+			sourceTree = "<group>";
+		};
+		E5C4207C2388C3D00017A102 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E5C420522388B0AE0017A102 /* Main.storyboard */,
+				E5C420552388B0AF0017A102 /* Assets.xcassets */,
+				E5C420572388B0AF0017A102 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E5C4207D2388C3EC0017A102 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E5C420502388B0AE0017A102 /* SecondViewController.swift */,
+				E5C4204E2388B0AE0017A102 /* FirstViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		E5C4207E2388C4120017A102 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
