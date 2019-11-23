@@ -16,6 +16,7 @@
 		E5C420592388B0AF0017A102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E5C420572388B0AF0017A102 /* LaunchScreen.storyboard */; };
 		E5C420642388B0AF0017A102 /* OnTheMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C420632388B0AF0017A102 /* OnTheMapTests.swift */; };
 		E5C4206F2388B0AF0017A102 /* OnTheMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C4206E2388B0AF0017A102 /* OnTheMapUITests.swift */; };
+		E5C420802388C6B80017A102 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C4207F2388C6B80017A102 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		E5C4206A2388B0AF0017A102 /* OnTheMapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnTheMapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5C4206E2388B0AF0017A102 /* OnTheMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapUITests.swift; sourceTree = "<group>"; };
 		E5C420702388B0AF0017A102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5C4207F2388C6B80017A102 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 			children = (
 				E5C420502388B0AE0017A102 /* SecondViewController.swift */,
 				E5C4204E2388B0AE0017A102 /* FirstViewController.swift */,
+				E5C4207F2388C6B80017A102 /* LoginViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				E5C420512388B0AE0017A102 /* SecondViewController.swift in Sources */,
 				E5C4204F2388B0AE0017A102 /* FirstViewController.swift in Sources */,
 				E5C4204B2388B0AE0017A102 /* AppDelegate.swift in Sources */,
+				E5C420802388C6B80017A102 /* LoginViewController.swift in Sources */,
 				E5C4204D2388B0AE0017A102 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
