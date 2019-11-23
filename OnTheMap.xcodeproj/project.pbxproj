@@ -17,6 +17,8 @@
 		E5C420642388B0AF0017A102 /* OnTheMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C420632388B0AF0017A102 /* OnTheMapTests.swift */; };
 		E5C4206F2388B0AF0017A102 /* OnTheMapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C4206E2388B0AF0017A102 /* OnTheMapUITests.swift */; };
 		E5C420802388C6B80017A102 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C4207F2388C6B80017A102 /* LoginViewController.swift */; };
+		E5C420822388DCF30017A102 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C420812388DCF30017A102 /* APIClient.swift */; };
+		E5C42086238990B80017A102 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C42085238990B80017A102 /* LoginResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		E5C4206E2388B0AF0017A102 /* OnTheMapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnTheMapUITests.swift; sourceTree = "<group>"; };
 		E5C420702388B0AF0017A102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5C4207F2388C6B80017A102 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E5C420812388DCF30017A102 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		E5C42085238990B80017A102 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 		E5C4207E2388C4120017A102 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E5C420812388DCF30017A102 /* APIClient.swift */,
+				E5C42085238990B80017A102 /* LoginResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -294,6 +300,8 @@
 				E5C4204B2388B0AE0017A102 /* AppDelegate.swift in Sources */,
 				E5C420802388C6B80017A102 /* LoginViewController.swift in Sources */,
 				E5C4204D2388B0AE0017A102 /* SceneDelegate.swift in Sources */,
+				E5C420822388DCF30017A102 /* APIClient.swift in Sources */,
+				E5C42086238990B80017A102 /* LoginResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
