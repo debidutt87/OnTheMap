@@ -37,16 +37,11 @@ class LoginViewController:UIViewController{
             performSegue(withIdentifier: "authenticationComplete", sender: nil)
         }else{
             print("authentication failure : staying on login page")
+            
             let alertVC = UIAlertController(title: "Error", message: error?.localizedDescription ?? "Email ID or Password is incorrect", preferredStyle: .alert)
             alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             show(alertVC, sender: nil)
         }
-    }
-    
-    func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
     }
     
 }
