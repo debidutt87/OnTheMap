@@ -39,6 +39,7 @@ class DropPinMapViewController: UIViewController{
             // get User data : firstName, lastName
             APIClient.getUserData { (userData, error) in
                 guard let userData = userData else {
+                    self.showAlert(title: "Warning!", message: error?.localizedDescription ?? "")
                     return
                 }
          

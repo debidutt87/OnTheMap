@@ -53,7 +53,11 @@
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem image="icon_addpin" id="tyD-1i-oUw"/>
+                            <barButtonItem image="icon_addpin" id="tyD-1i-oUw">
+                                <connections>
+                                    <action selector="addLocation:" destination="9pv-A4-QxB" id="Sx0-sg-1Fg"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem image="icon_refresh" id="66y-Uv-5kP">
                                 <connections>
                                     <action selector="refreshMapView:" destination="9pv-A4-QxB" id="AAY-xc-2E4"/>

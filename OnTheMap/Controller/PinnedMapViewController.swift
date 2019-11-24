@@ -30,8 +30,10 @@ class PinnedMapViewController: UIViewController {
           
              guard let data = data else {
                  print(error?.localizedDescription ?? "")
+                 self.showAlert(title: "Warning!", message: error?.localizedDescription ?? "")
                  return
              }
+            
              DispatchQueue.main.async {
                 StudentsLocationData.studentsData = data
                 
@@ -43,6 +45,29 @@ class PinnedMapViewController: UIViewController {
                 }
                 self.mapView.addAnnotations(self.annotations)
             }
+            
+            
+        })
+    }
+    
+    @IBAction func addLocation(_ sender: Any) {
+        let alertVC = UIAlertController(title: "Warning!", message: "You've already put your pin on the map.\nWould you like to overwrite it?", preferredStyle: .alert)
+        
+        APIClient.getStudentLocation( completion:{ (data, error) in
+            
+            guard let data = data else {
+                print(error?.localizedDescription ?? "")
+                self.showAlert(title: "Warning!", message: error?.localizedDescription ?? "")
+                return
+            }
+            if data.count > 0 {
+            alertVC.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [unowned self] (_) in
+                self.performSegue(withIdentifier: "addLocation",  sender: (true, data))
+            }))
+        
+            alertVC.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+            self.present(alertVC, animated: true, completion: nil)
+           }
         })
     }
     

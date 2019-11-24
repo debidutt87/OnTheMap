@@ -42,12 +42,11 @@ class PinnedListViewController: UIViewController{
     }
     
     @objc func refreshPinList() {
-        //isDownloading(true)
-        
         APIClient.getStudentLocation(completion:{ (data, error) in
           
         guard let data = data else {
             print(error?.localizedDescription ?? "")
+            self.showAlert(title: "Warning!", message: error?.localizedDescription ?? "")
             return
         }
         StudentsLocationData.studentsData = data
@@ -82,6 +81,16 @@ extension PinnedListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let app = UIApplication.shared
         app.open(URL(string: studentLocArray[indexPath.row].mediaURL) ?? URL(string: "")!, options: [:], completionHandler: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        if segue.identifier == "addLocation" {
+            let controller = segue.destination as! LocationFinderController
+            let updateFlag = sender as? (Bool, [StudentLocation])
+            controller.updatePin = updateFlag?.0
+            controller.studentArray = updateFlag?.1
+        }
     }
     
 }
