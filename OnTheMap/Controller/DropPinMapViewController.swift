@@ -17,7 +17,6 @@ class DropPinMapViewController: UIViewController{
     var coordinate: CLLocationCoordinate2D!
     var updatePin: Bool!
     var url: String!
-    var studentLocArray: [StudentLocation]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,9 +64,9 @@ class DropPinMapViewController: UIViewController{
         }
 
         func updateExistedSpot(postLocationData: PostLocation) {
-            if studentLocArray.isEmpty { return }
+            if StudentsLocationData.studentsData.isEmpty { return }
             // put student location
-            APIClient.putStudentLocation(objectID: studentLocArray[0].objectID, postLocation: postLocationData) { (success, error) in
+            APIClient.putStudentLocation(objectID: StudentsLocationData.studentsData[0].objectID, postLocation: postLocationData) { (success, error) in
                 
                 if error  != nil{
                     self.showAlert(title: "can't post new pin", message: "Error message :\n\(error?.localizedDescription ?? "can't post")")

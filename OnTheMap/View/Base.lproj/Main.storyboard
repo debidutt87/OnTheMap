@@ -311,9 +311,13 @@
                                     <action selector="findLocation:" destination="Mx9-o6-xpV" eventType="touchUpInside" id="6y0-Qk-Mjl"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Pjj-LD-mgF">
+                                <rect key="frame" x="197" y="397.5" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Pjj-LD-mgF" firstAttribute="centerX" secondItem="vMp-7c-OfC" secondAttribute="centerX" id="0Ib-uJ-0bt"/>
                             <constraint firstItem="fCQ-AO-7UT" firstAttribute="leading" secondItem="vMp-7c-OfC" secondAttribute="leading" constant="49" id="9Ak-1b-7yq"/>
                             <constraint firstItem="DEg-8N-lSk" firstAttribute="centerX" secondItem="vMp-7c-OfC" secondAttribute="centerX" id="Fxp-xp-VO6"/>
                             <constraint firstItem="DEg-8N-lSk" firstAttribute="centerY" secondItem="vMp-7c-OfC" secondAttribute="centerY" id="MLD-sg-Woe"/>
@@ -321,6 +325,7 @@
                             <constraint firstItem="AWq-lz-xm2" firstAttribute="centerX" secondItem="vMp-7c-OfC" secondAttribute="centerX" id="Q3Q-WF-eTR"/>
                             <constraint firstItem="xn4-H3-b6n" firstAttribute="leading" secondItem="vMp-7c-OfC" secondAttribute="leading" constant="49" id="V1I-Ce-p7w"/>
                             <constraint firstItem="fCQ-AO-7UT" firstAttribute="top" secondItem="DEg-8N-lSk" secondAttribute="bottom" constant="17" id="bR4-wS-Hn8"/>
+                            <constraint firstItem="Pjj-LD-mgF" firstAttribute="centerY" secondItem="vMp-7c-OfC" secondAttribute="centerY" id="jxR-8H-jVR"/>
                             <constraint firstItem="xn4-H3-b6n" firstAttribute="top" secondItem="AWq-lz-xm2" secondAttribute="bottom" constant="113" id="kJg-op-sqm"/>
                             <constraint firstItem="AWq-lz-xm2" firstAttribute="width" secondItem="cGM-RN-7QV" secondAttribute="width" multiplier="0.243961" id="nMa-nP-Y3h"/>
                             <constraint firstItem="vMp-7c-OfC" firstAttribute="trailing" secondItem="fCQ-AO-7UT" secondAttribute="trailing" constant="49" id="pR6-o2-LbJ"/>
@@ -332,6 +337,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="wZG-2N-Csc"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Pjj-LD-mgF" id="cRD-aR-hwy"/>
                         <outlet property="enterLink" destination="DEg-8N-lSk" id="goT-FQ-15V"/>
                         <outlet property="enterLocation" destination="xn4-H3-b6n" id="VT2-EZ-MrO"/>
                         <segue destination="vBh-LA-cKc" kind="show" identifier="findLocation" id="tUP-UW-Jtu"/>

@@ -11,16 +11,14 @@ import UIKit
 class PinnedListViewController: UIViewController{
     
     @IBOutlet var tableView: UITableView!
-    
     var studentLocArray = [StudentLocation]()
     
     override func viewDidLoad() {
         
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-
-        refreshPinList()
+        tableView.dataSource = self
+        tableView.delegate = self
         
+        refreshPinList()
     }
     
     @IBAction func refreshList(_ sender: Any) {
@@ -80,7 +78,13 @@ extension PinnedListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let app = UIApplication.shared
-        app.open(URL(string: studentLocArray[indexPath.row].mediaURL) ?? URL(string: "")!, options: [:], completionHandler: nil)
+        if let url = URL(string: studentLocArray[indexPath.row].mediaURL){
+            if app.canOpenURL(url){
+                app.open(url, options: [:], completionHandler: nil)
+            }else{
+                showAlert(title: "Warning", message: "Specified URL cannot be opened!")
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -89,7 +93,9 @@ extension PinnedListViewController: UITableViewDataSource, UITableViewDelegate {
             let controller = segue.destination as! LocationFinderController
             let updateFlag = sender as? (Bool, [StudentLocation])
             controller.updatePin = updateFlag?.0
-            controller.studentArray = updateFlag?.1
+            if let studentData = updateFlag {
+            StudentsLocationData.studentsData = studentData.1
+            }
         }
     }
     

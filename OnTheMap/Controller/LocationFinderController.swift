@@ -13,15 +13,10 @@ class LocationFinderController:UIViewController{
     
     @IBOutlet var enterLocation: UITextField!
     @IBOutlet var enterLink: UITextField!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     var updatePin: Bool!
     var mediaUrl: String = " "
-    var studentArray: [StudentLocation]!
-    
-    override func viewDidLoad() {
-        
-    }
-    
     
     @IBAction func findLocation(_ sender: Any) {
         
@@ -52,7 +47,6 @@ class LocationFinderController:UIViewController{
             controller.location = locationDetails.0
             controller.coordinate = locationDetails.1
             controller.updatePin = updatePin
-            controller.studentLocArray = studentArray
             
             print("prepare URL: \(mediaUrl)")
             controller.url = mediaUrl
@@ -62,10 +56,14 @@ class LocationFinderController:UIViewController{
     
     func locator(location: String){
     
+        activityIndicator.startAnimating()
+        
         CLGeocoder().geocodeAddressString(location) { (placemark, error) in
                
                guard error == nil else {
+                self.activityIndicator.stopAnimating()
                    self.showAlert(title: "Error", message: "location not found: \(location)")
+                
                    return
                }
                let coordinate = placemark?.first!.location!.coordinate
@@ -74,6 +72,8 @@ class LocationFinderController:UIViewController{
                print(coordinate?.longitude ?? 0)
                
                self.performSegue(withIdentifier: "findLocation", sender: (location, coordinate))
+            
+            self.activityIndicator.stopAnimating()
            }
         
     }

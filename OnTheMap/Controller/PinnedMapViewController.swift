@@ -76,7 +76,9 @@ class PinnedMapViewController: UIViewController {
             let destinationVC = segue.destination as? LocationFinderController
             let updateStudentInfo = sender as? (Bool, [StudentLocation])
             destinationVC?.updatePin = updateStudentInfo?.0
-            destinationVC?.studentArray = updateStudentInfo?.1
+            if let studentData = updateStudentInfo {
+            StudentsLocationData.studentsData = studentData.1
+            }
         }
     }
     
